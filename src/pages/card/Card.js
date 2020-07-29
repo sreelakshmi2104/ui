@@ -41,7 +41,7 @@ export default function Cards(props) {
 
   const getAward=()=>{
     axios
-    .get("http://localhost:8081/awards").
+    .get("http://localhost:8080/awards").
     then(data=>{
       console.log(data);
       setAwardsState(data.data)

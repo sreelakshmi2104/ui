@@ -21,6 +21,7 @@ import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import CastForEducationIcon from '@material-ui/icons/CastForEducation';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import CardMembershipRoundedIcon from '@material-ui/icons/CardMembershipRounded';
+import Layout from '../layout/Layout'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,6 +48,7 @@ export default function NestedList() {
   
  
   return (
+    
     <List
       component="nav"
       aria-labelledby="nested-list-subheader"
@@ -138,5 +140,6 @@ export default function NestedList() {
       </ListItem>
  
    </List>
+   
   );
 }

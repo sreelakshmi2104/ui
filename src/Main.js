@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './pages/home/Home';
+import LoginByGoogle from './pages/home/LoginByGoogle';
 import {MuiThemeProvider,createMuiTheme} from '@material-ui/core';
 import red from '@material-ui/core/colors/red'
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
@@ -18,6 +19,7 @@ import SurveyPoll from './pages/Organisation/SurveyPoll';
 import Poll from './pages/poll/Poll';
 import AddTeam from './pages/add team/AddTeam';
 
+import DashboardM from './pages/dashboard/DashboardM';
 function Main() {
     const theme= createMuiTheme({
       palette:{
@@ -38,9 +40,11 @@ function Main() {
       <MuiThemeProvider theme ={theme}>
       <Router>
       <div >
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={LoginByGoogle} />
+        <Route exact path="/Home" component={Home} />
         <Route exact path="/login" component={SignInSide} />
         <Route exact path="/dashboard" component={Dashboard}/>
+        <Route exact path="/DashboardM" component={DashboardM}/>
         <Route exact path="/cards" component={CardAlign}/>
         <Route exact path="/addMembers" component={AddMembers}/>
         <Route exact path="/ecard" component={ECard}/>

@@ -10,6 +10,8 @@ import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
 import Fab from '@material-ui/core/Fab';
 import {Link} from 'react-router-dom';
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
+import GoogleLogin from 'react-google-login';
+
 
 
 
@@ -26,6 +28,23 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
                     <Grid item>
                         <div>
                             <Tooltip title="Want to Login?">
+                           
+                            {/* <GoogleLogin
+                            color="secondary"
+
+                               clientId="1067840943467-puvrg4m115mnebmc5lvcvd9dql09dngu.apps.googleusercontent.com"
+                              
+                              buttonText="Login "
+
+
+                                // onSuccess={responseGoogle}
+
+// onFailure={responseGoogle}
+ >
+
+</GoogleLogin> */}
+
+
                             <Fab variant="extended" color="secondary" component={Link} to="/activity"><AccountCircleSharpIcon  />LOGIN</Fab>
                             </Tooltip>
                         </div>
@@ -45,7 +64,7 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
                   <MDBView>
                     <img
                       className="d-block w-100"
-                      src={img1} width="100%" height="100%"
+                      src={img1} width="100%" height="576px"
                     />
                   </MDBView>
                 </MDBCarouselItem>
@@ -53,6 +72,7 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
             </MDBCarousel>
           </MDBContainer>
           </div>
+          
           </>
     )}
 
