@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Dashboard from '../dashboard/Dashboard'
-
+import Dashboard from '../dashboard/Dashboardvp'
+import DashboardT from '../dashboard/DashboardT'
 
 export class Layout extends Component {
     render() {

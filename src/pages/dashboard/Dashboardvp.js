@@ -161,9 +161,13 @@ export default function Dashboard(props) {
         </IconButton>
         
         </div>
-       
-
         
+
+        {/* <TeamDashboardList/> */}
+
+        {/* <ManagerDashboardList/> */}
+
+        <VPDashboardList/>
          
         <Divider />
         

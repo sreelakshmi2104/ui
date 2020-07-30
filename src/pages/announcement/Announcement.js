@@ -22,9 +22,9 @@ function Announcement() {
       <Layout>
     <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
       <CssBaseline />
-      <Typography variant="h4" align="center" component="h1" gutterBottom>
+      {/* <Typography variant="h4" align="center" component="h1" gutterBottom>
          Announcement
-      </Typography>
+      </Typography> */}
       <Typography variant="h5" align="center" component="h2" gutterBottom>
         Enter the Announcement
       </Typography>

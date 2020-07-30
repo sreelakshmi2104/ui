@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from "mdbreact";
 import img1 from '../../assets/images/targetwelcome.png';
-import Dashboard from '../dashboard/Dashboard.js';
+import Dashboard from '../dashboard/Dashboardvp.js';
 import VPDashboardList from '../dashboard/VPDashboardList.js'
 import button from '@material-ui/core/Button'
 // import LogoutButton from '@material-ui/core/Logout'
@@ -38,75 +38,61 @@ export class Logintbygoogle extends Component {
       first_name: res.profileObj.givenName,
       last_name: res.profileObj.familyName,
       emp_email: res.profileObj.email,
-
-
       image_url: res.profileObj.imageUrl,
-
       provider_name: 'Google'
     };
+    let current=res.profileObj.googleId;
+    // console.log(current);
 
 
 
     axios.post('http://localhost:8080/employee', googleresponse)
-
       .then((result) => {
-
         let responseJson = result;
-
         sessionStorage.setItem("userData", JSON.stringify(result));
-
-        // this.props.history.push('/Dashboard')
-
       });
-      // componentDidMount() {
         
-        axios.get(`http://localhost:8080/emproles`)
+        axios.get(`http://localhost:8080/emproles/${current}`)
           .then(res => {
             const roles = res.data;
             this.setState({ roles });
+            // console.log(roles)
+            if (roles[0].roleName == "role_vp")
+            {
+              this.props.history.push('/Dashboardvp')
+            }
+            else if(roles[0].roleName=="role_manager")
+              {
+                this.props.history.push('/DashboardM')
+              }
+              else
+              {
+                if(roles[0].roleName=="role_tm")
+                 {
+                  this.props.history.push('/DashboardT')
+                }
+                
+              }
+           
             
-          //  console.log(roles[1].roleName)
-
-            
-            console.log(roles)
-            
-            // if (roles[1].roleName == "role_vp")
-            // {
-            //   // button = <AccountCircleSharpIcon onClick={this.handleLogoutClick} />;
-            //   this.props.history.push('/Dashboard')
-              
-            // }
-            // else 
-            // {
-            //   this.props.history.push('/DashboardM')
-            // }
-            
-
+           
           })
           
       // }
   };
 
   render() {
-
     const responseGoogle = (response) => {
-
-      console.log(response);
-
+      // console.log(response);
       var res = response.profileObj;
-
-      console.log(res);
-
+      // console.log(res);
     //   debugger;
-
       this.signup(response);
 
     }
 
     return (
-
       <div className="App">
-
 <AppBar  position="fixed" style={{ background: 'transparent', boxShadow: 'none'}}>
                 <Toolbar>
                 <Grid justify="space-between"  container spacing={24}>
@@ -116,29 +102,17 @@ export class Logintbygoogle extends Component {
                     <Grid item>
 
         <div className="row">
-
           <div style={{ 'paddingTop': "20px" }} className="col-sm-12">
-
             <div className="col-sm-4"></div>
-
             <div className="col-sm-4">
-
               <GoogleLogin
-
-                clientId="1067840943467-95a8enufi11s9chjcj16e7e0fan3273i.apps.googleusercontent.com"
-
+                clientId="487050070331-10md2t0pdqe7qtus6ig1ju6jtrdk22f4.apps.googleusercontent.com"
                 buttonText="Login with Google"
-
                 onSuccess={responseGoogle}
-
                 onFailure={responseGoogle} ></GoogleLogin>
-
             </div>
-
             <div className="col-sm-4"></div>
-
           </div>
-
         </div>
         
                     </Grid>
