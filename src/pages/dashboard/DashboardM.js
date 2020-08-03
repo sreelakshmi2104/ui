@@ -12,6 +12,9 @@ import TeamDashboardList from './TeamDashboardList'
 import VPDashboardList from './VPDashboardList'
 import DashboardRoundedIcon from '@material-ui/icons/DashboardRounded';
 import img1 from '../../assets/images/target7.jpg';
+import Avatar from '@material-ui/core/Avatar';
+import { useGoogleLogout } from 'react-google-login';
+import Activity from '../activity/Activity';
 
 
 
@@ -21,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
   
     display: 'flex',
    
+  },
+  large: {
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+    
   },
   appBar: {
     
@@ -61,11 +69,11 @@ const useStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    textAlign:'left',
-    padding: theme.spacing(0, 1),
+    textAlign:'center',
+    padding: theme.spacing(2, 0),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
   },
   content: {
     flexGrow: 1,
@@ -100,9 +108,12 @@ export default function Dashboard(props) {
     setOpen(false);
   };
 
+ 
+
   return (
-    
+    <>
     <div className={classes.root}>
+      
       <CssBaseline />
      
       <AppBar
@@ -131,7 +142,8 @@ export default function Dashboard(props) {
           </Grid>
           <Grid item>
           <Tooltip title="Want to Logout?">         
-           <Fab variant="extended" color="secondary" component={Link} to="/"><ExitToAppOutlinedIcon/>LOGout</Fab>
+           <Fab variant="extended" color="secondary" onClick="logOut()"><ExitToAppOutlinedIcon/>Logout</Fab>
+  
         </Tooltip>
             </Grid>
         </Toolbar>
@@ -149,21 +161,22 @@ export default function Dashboard(props) {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader} textAlign="left">
-        { <DashboardRoundedIcon color="inherit"/>}
-          <h2 > DASHBOARD</h2>
+        <div  className={classes.drawerHeader} >
+        
+        {  <Avatar alt="Remy" src={img1}   className={classes.large} />}
+
+          
           <IconButton onClick={handleDrawerClose}> 
-             {/* <IconButton variant="contained" textAlign="left" > */}
-              {/* HEY */}
+             
              <CloseIcon variant="contained" >
               </CloseIcon>
-          {/* </IconButton> */}
+          
         </IconButton>
-        
+       
         </div>
-        {/* role based*/}
-
-        {/* <TeamDashboardList/> */}
+        
+        <h1 align="center">WELCOME</h1>
+        
 
         <ManagerDashboardList/>
 
@@ -180,6 +193,7 @@ export default function Dashboard(props) {
         <div className={classes.drawerHeader} />
       </main>
     </div>
-    
+    <Activity/>
+    </>
   );
 }

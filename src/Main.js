@@ -23,6 +23,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 
 import DashboardM from './pages/dashboard/DashboardM';
 import DashboardRoutes from './pages/dashboard/DashboardRoutes';
+import Awards from './pages/card/Awards'
 function Main() {
     const theme= createMuiTheme({
       palette:{
@@ -51,6 +52,7 @@ function Main() {
         <Route  exact path="/DashboardM" component={DashboardM}/>
         <Route  exact path="/DashboardT" component={DashboardT}/>       
         <Route exact path="/cards" component={CardAlign}/>
+        <Route exact path="/awards" component={Awards}/>
         <Route exact path="/addMembers" component={AddMembers}/>
         <Route exact path="/ecard" component={ECard}/>
         <Route exact path="/announcement" component={Announcement}/>
@@ -63,11 +65,11 @@ function Main() {
         <Route exact path="/poll" component={Poll}/>
         <Route exact path="/ecardsreceived" component={ECard}/>
         <Route exact path="/addTeam" component={AddTeam}/>
-        {/* <Route exact path="/Dashboardroutes" component={DashboardRoutes}/> */}
+        
+     
       </div> 
       </Router>
-        {/* <DashboardRoutes/> */}
-     {/* <SignInSide/> */}
+       
     </MuiThemeProvider>
   
     );

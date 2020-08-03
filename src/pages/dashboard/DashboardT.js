@@ -12,6 +12,7 @@ import TeamDashboardList from './TeamDashboardList'
 import VPDashboardList from './VPDashboardList'
 import DashboardRoundedIcon from '@material-ui/icons/DashboardRounded';
 import img1 from '../../assets/images/target7.jpg';
+import Activity from '../activity/Activity';
 
 
 
@@ -101,7 +102,7 @@ export default function Dashboard(props) {
   };
 
   return (
-    
+    <>
     <div className={classes.root}>
       <CssBaseline />
      
@@ -175,6 +176,7 @@ export default function Dashboard(props) {
         <div className={classes.drawerHeader} />
       </main>
     </div>
-    
+    <Activity/>
+    </>
   );
 }

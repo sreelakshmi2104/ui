@@ -60,7 +60,7 @@ export default function NestedList() {
     </ListItem>
     <ListItem button onClick={handleClick1}>
     <ListItemIcon>{ <EmojiEventsIcon color="inherit"/>}</ListItemIcon>
-      <ListItemText primary="Recognition" />
+      <ListItemText primary=" My Recognition" />
      
       {open1 ? <ExpandLess /> : <ExpandMore />}
     </ListItem>
@@ -71,11 +71,11 @@ export default function NestedList() {
           <List>
             <ListItem button variant="outline" color="secondary" component={Link} to= "/individual"> 
             <ListItemIcon>{ <SchoolIcon color="inherit"/>}</ListItemIcon>
-            <ListItemText primary="Individual" /> 
+            <ListItemText primary="Individual Awards" /> 
           </ListItem >
           <ListItem button variant="outline" color="secondary" component={Link} to= "team">
           <ListItemIcon>{ <SchoolIcon color="inherit"/>}</ListItemIcon>
-          <ListItemText primary="Team" />
+          <ListItemText primary="Team Awards" />
           </ListItem>
           
           </List>
@@ -83,11 +83,7 @@ export default function NestedList() {
           </List>
           </Collapse>   
          
-          <ListItem button variant="outline" color="secondary" component={Link} to= "/ecard"  >
-          <ListItemIcon>{ <RedeemIcon color="inherit"/>}</ListItemIcon>
-      <ListItemText primary="E-cards" />
     
-    </ListItem>
     </List>
   );
 }

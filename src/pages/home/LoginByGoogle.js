@@ -40,6 +40,8 @@ export class Logintbygoogle extends Component {
       emp_email: res.profileObj.email,
       image_url: res.profileObj.imageUrl,
       provider_name: 'Google'
+
+    
     };
     let current=res.profileObj.googleId;
     // console.log(current);

@@ -5,6 +5,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import img1 from '../../assets/images/target5.jpg';
 import Layout from '../layout/Layout';
 import axios from "axios";
+import SendIcon from '@material-ui/icons/Send';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -66,7 +67,7 @@ export default function Cards(props) {
         }
         action={
           <IconButton aria-label="settings">
-            <MoreVertIcon />
+            <SendIcon />
           </IconButton>
         }
         title={a.award_name}

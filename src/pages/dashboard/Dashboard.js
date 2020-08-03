@@ -151,20 +151,16 @@ export default function Dashboard(props) {
       >
         <div className={classes.drawerHeader} textAlign="left">
         { <DashboardRoundedIcon color="inherit"/>}
-          <h2 > DASHBOARD</h2>
+          
           <IconButton onClick={handleDrawerClose}> 
-             {/* <IconButton variant="contained" textAlign="left" > */}
-              {/* HEY */}
+            
              <CloseIcon variant="contained" >
               </CloseIcon>
           {/* </IconButton> */}
         </IconButton>
         
         </div>
-       
 
-        
-         
         <Divider />
         
       </Drawer>

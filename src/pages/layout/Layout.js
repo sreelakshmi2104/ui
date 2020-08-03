@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Dashboard from '../dashboard/Dashboardvp'
+import Dashboard from '../dashboard/Dashboard'
 import DashboardT from '../dashboard/DashboardT'
 
 export class Layout extends Component {
@@ -7,7 +7,7 @@ export class Layout extends Component {
         return (
             <div >
                 <Dashboard />
-                { this.props.children }
+                {/* { this.props.children } */}
             </div>
         )
     }
